@@ -6,7 +6,7 @@ provider "aws" {
 
 # Create an S3 bucket
 resource "aws_s3_bucket" "udabucket" {
-  bucket = "cicd-terraform-demo-bucket20240909_574839"
+  bucket = "cicd-terraform-demo-bucket20240909-5748391274"
 
   tags = {
     Name        = "CICD test bucket"
