@@ -1,15 +1,17 @@
+# Workflow name
 name: Dynamic Workflow and Upload Files
+# Triggers for the workflow
 on:
   workflow_dispatch:
-  inputs:
-    index_document:
-      description: 'Name of the index document'
-      required: true
-      default: 'index.html'
-    error_document:
-      description: 'Name of the error document'
-      required: true
-      default: 'error.html'
+    inputs:
+      index_document:
+        description: 'Name of the index document'
+        required: true
+        default: 'index.html'
+      error_document:
+        description: 'Name of the error document'
+        required: true
+        default: 'error.html'
 env:
   BUCKET_NAME: website-artifacts
 
@@ -44,4 +46,3 @@ jobs:
           --stack-name uda-artifact \
           --query 'Stacks[0].Outputs[?OutputKey=='ArtifactBucketWebsiteURL'].OutputValue' \
           --output text
-        
